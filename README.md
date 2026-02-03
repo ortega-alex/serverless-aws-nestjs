@@ -41,3 +41,7 @@ aws ssm put-parameter-value --name "/nest/dev/db/password" --value "dev-password
 ```bash
 aws ssm get-parameter --name "/nest/dev/db/password" --with-decryption
 ```
+
+```bash
+aws ssm get-parameter --name "/nest/dev/mongo/uri" --with-decryption
+```

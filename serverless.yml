@@ -18,6 +18,7 @@ provider:
     DB_HOST: ${self:custom.settings.${self:provider.stage}.DB_HOST}
     DB_NAME: ${self:custom.settings.${self:provider.stage}.DB_NAME}
     DB_PASSWORD: ${ssm:/nest/${self:provider.stage}/db/password}
+    MONGO_URI: ${ssm:/nest/${self:provider.stage}/mongo/uri}
 
 functions:
   main: 

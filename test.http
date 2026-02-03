@@ -3,3 +3,6 @@ GET {{baseUrl}}/health
 
 ### GET /health/env
 GET {{baseUrl}}/health/env
+
+### GET /users/monto-test
+GET {{baseUrl}}/mongo-test
