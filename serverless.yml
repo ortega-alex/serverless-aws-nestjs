@@ -6,13 +6,18 @@ plugins:
 
 provider: 
   name: aws
-  runtime: nodejs20.x
+  runtime: nodejs16.x
   region: us-east-2
-  stage: dev
   timeout: 30
   memorySize: 512
+  stage: ${opt:stage, 'dev'}
   environment:
-    NODE_ENV: production
+    NODE_ENV: ${self:provider.stage}
+    APP_NAME: nest-lambda
+    LOG_LEVEL: debug
+    DB_HOST: ${self:custom.settings.${self:provider.stage}.DB_HOST}
+    DB_NAME: ${self:custom.settings.${self:provider.stage}.DB_NAME}
+    DB_PASSWORD: ${ssm:/nest/${self:provider.stage}/db/password}
 
 functions:
   main: 
@@ -22,3 +27,11 @@ functions:
           path: /{proxy+}
           method: ANY
 
+custom:
+  settings:
+    dev:
+      DB_HOST: localhost
+      DB_NAME: test_db
+    prod:
+      DB_HOST: cluster.mongo.aws
+      DB_NAME: prod_db

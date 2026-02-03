@@ -6,4 +6,15 @@ export class HealthController {
     health() {
         return { status: 'ok', lambda: true };
     }
+
+    @Get('env')
+    env() {
+        return {
+            nodeEnv: process.env.NODE_ENV,
+            appName: process.env.APP_NAME,
+            logLevel: process.env.LOG_LEVEL,
+            dbHost: process.env.DB_HOST,
+            dbName: process.env.DB_NAME
+        };
+    }
 }

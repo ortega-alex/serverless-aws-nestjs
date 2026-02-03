@@ -24,3 +24,20 @@ CloudFormation Stack
  ├── IAM Role
  └── CloudWatch Logs
 ```
+
+## crear secretos para variables de entorno seguras
+
+```bash
+aws ssm put-parameter  --name "/nest/dev/db/password" --value "dev-password" --type SecureString
+```
+
+## actualizar secretos
+```bash
+aws ssm put-parameter-value --name "/nest/dev/db/password" --value "dev-password" --type SecureString --overwrite
+```
+
+## para ver el valor del secreto
+
+```bash
+aws ssm get-parameter --name "/nest/dev/db/password" --with-decryption
+```
