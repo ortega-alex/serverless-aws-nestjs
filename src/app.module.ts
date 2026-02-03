@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { MongoModule } from './database/mongo/mongo.module';
 import { HealthController } from './health/health.controller';
 import { UserModule } from './users/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
     imports: [
@@ -19,7 +20,8 @@ import { UserModule } from './users/user.module';
             }
         }),
         MongoModule,
-        UserModule
+        UserModule,
+        AuthModule
     ],
     controllers: [AppController, HealthController],
     providers: [AppService]

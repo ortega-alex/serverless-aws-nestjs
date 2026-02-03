@@ -19,6 +19,7 @@ provider:
     DB_NAME: ${self:custom.settings.${self:provider.stage}.DB_NAME}
     DB_PASSWORD: ${ssm:/nest/${self:provider.stage}/db/password}
     MONGO_URI: ${ssm:/nest/${self:provider.stage}/mongo/uri}
+    JWT_SECRET: ${ssm:/nest/${self:provider.stage}/jwt/secret}
 
 functions:
   main: 
