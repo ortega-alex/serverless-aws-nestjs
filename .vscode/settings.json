@@ -1,0 +1,16 @@
+{
+    "material-icon-theme.activeIconPack": "nest",
+    "prettier.requireConfig": true,
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "rest-client.environmentVariables": {
+        "local": {
+            "baseUrl": "http://localhost:3000"
+        },
+        "dev": {
+            "baseUrl": "https://bdbacgye35.execute-api.us-east-2.amazonaws.com"
+        },
+    }
+}

@@ -1,0 +1,24 @@
+service: nest-lambda-api
+frameworkVersion: '3'
+
+plugins:
+  - serverless-offline
+
+provider: 
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-2
+  stage: dev
+  timeout: 30
+  memorySize: 512
+  environment:
+    NODE_ENV: production
+
+functions:
+  main: 
+    handler: dist/lambda.handler
+    events: 
+      - httpApi:
+          path: /{proxy+}
+          method: ANY
+
