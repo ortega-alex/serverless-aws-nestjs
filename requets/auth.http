@@ -1,0 +1,8 @@
+
+### POST /auth/login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+### GET /auth/secure
+GET {{baseUrl}}/auth/secure
+Authorization: Bearer {{token}}

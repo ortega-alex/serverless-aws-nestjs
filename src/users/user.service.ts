@@ -1,23 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { User } from './schemas/user.schema';
+// import bcript from 'bcrypt';
 
 @Injectable()
 export class UserService {
     constructor(@InjectModel(User.name) private readonly model: Model<User>) {}
 
     async findAll() {
-        return this.model.find().limit(1);
+        return this.model.find();
     }
 
     async create(data: CreateUserDto) {
         return this.model.create(data);
     }
 
-    async findOne(id: string) {
+    async findOne(id: ObjectId) {
         return this.model.findOne({ _id: id });
     }
 

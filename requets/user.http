@@ -1,0 +1,17 @@
+
+
+### GET /get-all
+GET {{baseUrl}}/users
+
+### POST /create
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "name": "java-test",
+    "email": "java@test.com",
+    "password": "123456"
+}
+
+### GET /get-one
+GET {{baseUrl}}/users/6984e1365ab6e72001b94b25
