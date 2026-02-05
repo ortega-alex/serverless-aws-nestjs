@@ -12,10 +12,6 @@ export class User extends Document {
 
     @Prop({ required: true })
     password: string;
-
-    comparePassword(password: string): Promise<boolean> {
-        return bcrypt.compare(password, this.password);
-    }
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

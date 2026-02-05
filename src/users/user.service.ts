@@ -11,7 +11,7 @@ export class UserService {
     constructor(@InjectModel(User.name) private readonly model: Model<User>) {}
 
     async findAll() {
-        return this.model.find();
+        return this.model.find({}, { password: false });
     }
 
     async create(data: CreateUserDto) {
@@ -19,7 +19,7 @@ export class UserService {
     }
 
     async findOne(id: ObjectId) {
-        return this.model.findOne({ _id: id });
+        return this.model.findOne({ _id: id }, { password: false });
     }
 
     async update(id: string, user: UpdateUserDto) {
@@ -28,5 +28,9 @@ export class UserService {
 
     async delete(id: string) {
         return this.model.deleteOne({ _id: id });
+    }
+
+    getByEmail(email: string) {
+        return this.model.findOne({ email });
     }
 }

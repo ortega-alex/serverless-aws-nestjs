@@ -6,6 +6,7 @@ GET {{baseUrl}}/users
 ### POST /create
 POST {{baseUrl}}/users
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "name": "java-test",
