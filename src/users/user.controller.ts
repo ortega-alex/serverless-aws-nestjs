@@ -1,14 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
-import { User } from './user.schema';
-import { Model } from 'mongoose';
+import { UserService } from './user.service';
 
 @Controller('mongo-test')
 export class UserController {
-    constructor(@InjectModel(User.name) private readonly model: Model<User>) {}
+    constructor(private readonly service: UserService) {}
 
     @Get()
     test() {
-        return this.model.find().limit(1);
+        return this.service.findAll();
     }
 }
