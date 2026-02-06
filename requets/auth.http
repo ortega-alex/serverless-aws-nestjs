@@ -8,6 +8,11 @@ Content-Type: application/json
     "password": "123456"
 }
 
+### POST /auth/refresh
+POST {{baseUrl}}/auth/refresh
+Content-Type: application/json  
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTg0ZTdhYzNlMGFhYTcwOWVlYWI5NDkiLCJpYXQiOjE3NzAzNTExNjUsImV4cCI6MTc3MDk1NTk2NX0.ZSBl04YFhCeXpk_VHIRZsd1Qcm0guV-w8woC_d62B9I
+
 ### GET /auth/secure
 GET {{baseUrl}}/auth/secure
 Authorization: Bearer {{token}}

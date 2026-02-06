@@ -8,7 +8,7 @@
     "rest-client.environmentVariables": {
         "local": {
             "baseUrl": "http://localhost:3000",
-            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtb25nb2RiX2lkIiwiaWF0IjoxNzcwMzE1MTUzLCJleHAiOjE3NzAzMTg3NTN9.Gzs3n2t0BDAcZY1QeiJuZtB_vsCCydxxJEhBLyiYN0A"
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzAzNTEzMjcsImV4cCI6MTc3MDM1MTM4N30.bGWvHIeGvlToYvStKbG3vMxBxM6URmsyOIqJPTYnLtM"
         },
         "dev": {
             "baseUrl": "https://bdbacgye35.execute-api.us-east-2.amazonaws.com",
